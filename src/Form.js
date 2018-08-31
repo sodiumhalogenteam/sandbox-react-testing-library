@@ -1,28 +1,36 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import TextInput from './TextInput';
 
 const Styles = styled.div`
   display: flex;
   flex-direction: column;
   width: 300px;
-  input {
+  form input {
     margin-bottom: 20px;
   }
 `;
 
 class Form extends Component {
+  state = {
+    isFormComplete: false,
+    name: '',
+    address: '',
+    question: '',
+  };
+
   render() {
     return (
       <Styles>
-        <label>Name</label>
-        <input type="text" />
+        <TextInput label="Name" placeholder="first & last name" />
 
-        <label>Address</label>
-        <input type="text" />
-
-        <label>Question</label>
-        <input type="text" />
+        {/* <button
+          onClick={() => {
+            this.setState({isFormComplete: true});
+          }}>
+          {this.state.isFormComplete ? 'Question Sent' : 'Submit form'}
+        </button> */}
       </Styles>
     );
   }
