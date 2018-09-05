@@ -14,8 +14,11 @@ class TextInput extends Component {
           type="text"
           placeholder={this.props.placeholder}
           onChange={e => {
-            this.props.onInputChange(e);
+            {
+              this.props.onInputChange(e);
+            }
           }}
+          date-testid="input"
         />
       </div>
     );

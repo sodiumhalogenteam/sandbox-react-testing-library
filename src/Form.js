@@ -23,7 +23,13 @@ class Form extends Component {
   render() {
     return (
       <Styles>
-        <TextInput label="Name" placeholder="first & last name" />
+        <TextInput
+          label="Name"
+          placeholder="first & last name"
+          onInputChange={e => {
+            this.props.onInputChange(e);
+          }}
+        />
 
         {/* <button
           onClick={() => {
